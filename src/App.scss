@@ -1,0 +1,164 @@
+$fontURL: "./fonts/neucha-v12-latin-regular.";
+$bgBody: rgb(0, 0, 10);
+$bgHeader: linear-gradient(0deg, rgb(96, 96, 196), rgb(8, 8, 102));
+$bgProfile: linear-gradient(0deg, rgb(8, 8, 102), rgb(171, 152, 196));
+$bgShadow: 5px 5px 7px -2px rgb(182, 230, 120);
+
+@mixin d-flex() {
+    display: flex;
+}
+
+@mixin wrap() {
+    @include d-flex();
+    justify-content: center;
+    align-items: center;
+}
+
+@font-face {
+    font-family: "Neucha";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Neucha"), url($fontURL + "eot?#iefix") format("embedded-opentype"),
+        url($fontURL + "woff2") format("woff2"), url($fontURL + "woff") format("woff"),
+        url($fontURL + "ttf") format("truetype"), url($fontURL + "svg#Neucha") format("svg");
+}
+
+html {
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.2rem;
+    background: $bgBody;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.App {
+    @include wrap();
+    color: wheat;
+}
+
+.container {
+    max-width: 900px;
+    width: 95%;
+    min-height: 100vh;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background: $bgHeader;
+    box-shadow: $bgShadow;
+
+    .header__img {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+    }
+
+    .header__profile {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 12px;
+        padding: 5px;
+        border-radius: 25px;
+        transition: 0.5s;
+    }
+
+    .header__profile:hover {
+        cursor: pointer;
+        background: rgb(163, 134, 134);
+    }
+}
+
+.bg-profile {
+    background: $bgProfile;
+}
+
+.logo {
+    display: flex;
+    align-items: baseline;
+
+    .logo__link {
+        font-size: 1.5rem;
+        color: rgb(21, 21, 49);
+        text-shadow: 1px 1px rgb(182, 230, 120);
+        animation: h_head 2s infinite;
+    }
+}
+
+@keyframes h_head {
+    5% {
+        color: rgb(44, 235, 6);
+    }
+    10% {
+        color: rgb(21, 21, 49);
+    }
+    15% {
+        color: rgb(44, 235, 6);
+    }
+    20% {
+        color: rgb(21, 21, 49);
+    }
+    100% {
+        color: rgb(21, 21, 49);
+    }
+}
+
+.form-search {
+    border-radius: 10px;
+    height: 30px;
+    display: flex;
+
+    .form-search__search {
+        width: 250px;
+        text-align: center;
+        border: none;
+        background: transparent;
+    }
+    .form-search__search,
+    .form-search__search::placeholder {
+        color: white;
+    }
+}
+
+.shop {
+    position: relative;
+    text-transform: uppercase;
+    text-shadow: 2px 2px rgb(171, 152, 196);
+}
+.shop::before {
+    position: absolute;
+    top: -5px;
+    left: -30px;
+    content: "";
+    border: 50px solid transparent;
+    border-top: 50px solid rgb(8, 8, 102);
+    z-index: -1;
+    transform: rotate(15deg);
+}
