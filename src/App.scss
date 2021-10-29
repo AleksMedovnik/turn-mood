@@ -5,6 +5,7 @@ $logoDark: rgb(21, 21, 49);
 $bgContent: linear-gradient(0deg, rgb(96, 96, 196), rgb(8, 8, 102));
 $bgProfile: linear-gradient(0deg, rgb(8, 8, 102), rgb(171, 152, 196));
 $bgShadow: 5px 5px 7px -2px rgb(182, 230, 120);
+$linkColor: rgb(163, 134, 134);
 $activelinkColor: rgb(240, 144, 144);
 
 @mixin d-flex() {
@@ -216,6 +217,7 @@ img {
         margin-bottom: 10px;
 
         a {
+            color: $linkColor;
             transition: 0.3s;
         }
         a.active,
