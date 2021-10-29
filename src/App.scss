@@ -188,7 +188,7 @@ img {
 .shop {
     position: relative;
     text-transform: uppercase;
-    text-shadow: 2px 2px rgb(171, 152, 196);
+    text-shadow: 2px 2px $logoLight;
 }
 .shop::before {
     position: absolute;
