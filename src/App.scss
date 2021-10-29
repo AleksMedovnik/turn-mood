@@ -1,8 +1,11 @@
 $fontURL: "./fonts/neucha-v12-latin-regular.";
 $bgBody: rgb(0, 0, 10);
-$bgHeader: linear-gradient(0deg, rgb(96, 96, 196), rgb(8, 8, 102));
+$logoLight: rgb(44, 235, 6);
+$logoDark: rgb(21, 21, 49);
+$bgContent: linear-gradient(0deg, rgb(96, 96, 196), rgb(8, 8, 102));
 $bgProfile: linear-gradient(0deg, rgb(8, 8, 102), rgb(171, 152, 196));
 $bgShadow: 5px 5px 7px -2px rgb(182, 230, 120);
+$activelinkColor: rgb(240, 144, 144);
 
 @mixin d-flex() {
     display: flex;
@@ -34,14 +37,9 @@ html {
 }
 
 body {
+    font-family: Neucha;
     font-size: 1.2rem;
     background: $bgBody;
-}
-
-ul,
-ol,
-li {
-    list-style: none;
 }
 
 a {
@@ -50,29 +48,72 @@ a {
 
 img {
     max-width: 100%;
+    border-radius: 100%;
 }
 
 .App {
     @include wrap();
     color: wheat;
+
+    a,
+    input,
+    input::placeholder {
+        color: inherit;
+    }
 }
 
 .container {
     max-width: 900px;
     width: 95%;
-    min-height: 100vh;
+    min-height: 110vh;
+    display: grid;
+    grid-template-areas: "h h" "n m";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
 }
 
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hover-box {
+    transition: .5s;
+}
+
+.hover-box:hover {
+    transform: translateX(10px);
+}
+
+.hover-link {
+    transition: .3s;
+}
+
+.hover-link:hover {
+    transform: translateX(5px);
+}
+
+.main,
+.nav,
 .header {
+    background: $bgContent;
+    box-shadow: $bgShadow;
+    border-radius: 10px;
+}
+.header,
+.nav {
     position: sticky;
+}
+.header {
+    grid-area: h;
     top: 0;
-    height: 60px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-radius: 10px;
-    background: $bgHeader;
-    box-shadow: $bgShadow;
+    z-index: 2;
 
     .header__img {
         width: 30px;
@@ -114,19 +155,19 @@ img {
 
 @keyframes h_head {
     5% {
-        color: rgb(44, 235, 6);
+        color: $logoLight;
     }
     10% {
-        color: rgb(21, 21, 49);
+        color: $logoDark;
     }
     15% {
-        color: rgb(44, 235, 6);
+        color: $logoLight;
     }
     20% {
-        color: rgb(21, 21, 49);
+        color: $logoDark;
     }
     100% {
-        color: rgb(21, 21, 49);
+        color: $logoDark;
     }
 }
 
@@ -141,10 +182,6 @@ img {
         border: none;
         background: transparent;
     }
-    .form-search__search,
-    .form-search__search::placeholder {
-        color: white;
-    }
 }
 
 .shop {
@@ -155,10 +192,37 @@ img {
 .shop::before {
     position: absolute;
     top: -5px;
-    left: -30px;
+    left: -40px;
     content: "";
     border: 50px solid transparent;
     border-top: 50px solid rgb(8, 8, 102);
     z-index: -1;
     transform: rotate(15deg);
 }
+
+.main {
+    grid-area: m;
+    padding: 20px;
+}
+
+.nav {
+    top: 0px;
+    grid-area: n;
+    max-height: 110vh;
+    padding: 115px 30px 0;
+    z-index: 1;
+
+    li {
+        margin-bottom: 10px;
+
+        a {
+            transition: 0.3s;
+        }
+        a.active,
+        a:hover {
+            color: $activelinkColor;
+        }
+    }
+}
+
+

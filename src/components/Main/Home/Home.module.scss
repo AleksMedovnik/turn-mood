@@ -1,0 +1,23 @@
+$statusColor: rgb(250, 184, 184);
+
+.user {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 2fr 8fr 2fr;
+    align-items: center;
+    
+
+    .user__image {
+        width: 90px;
+    }
+
+    .user__status {
+        font-size: 1rem;
+        color: $statusColor;
+    }
+
+    .user__follow{
+        width: 80px;
+        height: 20px;
+    }
+}

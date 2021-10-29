@@ -1,0 +1,31 @@
+$messageColor: rgb(219, 157, 157);
+
+.chat{
+    list-style: none;
+    
+}
+.messages {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 2fr 10fr;
+    cursor: pointer;
+
+    .messages__image {
+        width: 60px;
+    }
+
+    .messages__name {
+        font-size: .9rem;
+        color: $messageColor;
+    }
+
+    .messages__message{
+        display: block;
+        max-width: 540px;
+        height: 20px;
+        overflow: hidden;
+        font-size: .8rem;
+        font-family: sans-serif;
+        line-height: 200%;
+    }
+}

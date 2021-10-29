@@ -1,0 +1,18 @@
+$statusColor: rgb(238, 155, 155);
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .profile__image {
+        width: 200px;
+    }
+    .profile__name {
+        font-size: 1.4rem;
+    }
+    .profile__status {
+        font-size: .9rem;
+        color: $statusColor;
+    }
+}
