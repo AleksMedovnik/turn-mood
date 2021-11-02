@@ -9,8 +9,7 @@ const Messages = props => {
             </div>
             <div>
                 <span className={classes.messages__name}>{props.name}</span>
-                <br />
-                <span className={classes.messages__message}>{props.message}</span>
+                <p className={classes.messages__message}>{props.message}</p>
             </div>
         </div>
     )

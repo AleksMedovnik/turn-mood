@@ -14,7 +14,7 @@ const HomeUser = props => {
                 <span className={classes.user__status}>{props.status}</span>
             </div>
             <div>
-                <button type='button' className={classes.user__follow}>
+                <button type='button' className='btn'>
                     {props.followed ? 'Unfollow' : 'Follow'}
                 </button>
             </div>
