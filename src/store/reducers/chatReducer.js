@@ -1,16 +1,19 @@
+const GET_MESSAGES = 'SET-MESSAGES';
+
 let initialState = {
-    chat: [
-        {name: 'Vasya Pupkin', message: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia porro aut necessitatibus deserunt ex! Beatae a dignissimos cupiditate, at dolor, sint quas, repellendus eligendi minus quos officia blanditiis. Quia, culpa.`, id: 0},
-        {name: 'Masha Plyushkina', message: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia porro aut necessitatibus deserunt ex! Beatae a dignissimos cupiditate, at dolor, sint quas, repellendus eligendi minus quos officia blanditiis. Quia, culpa.`, id: 1},
-        {name: 'Elon Musk', message: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia porro aut necessitatibus deserunt ex! Beatae a dignissimos cupiditate, at dolor, sint quas, repellendus eligendi minus quos officia blanditiis. Quia, culpa.`, id: 4},
-        {name: 'Warren Buffett', message: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia porro aut necessitatibus deserunt ex! Beatae a dignissimos cupiditate, at dolor, sint quas, repellendus eligendi minus quos officia blanditiis. Quia, culpa.`, id: 5},
-        {name: 'Jack Ma', message: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia porro aut necessitatibus deserunt ex! Beatae a dignissimos cupiditate, at dolor, sint quas, repellendus eligendi minus quos officia blanditiis. Quia, culpa.`, id: 7},
-        {name: 'Pasha Durov', message: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia porro aut necessitatibus deserunt ex! Beatae a dignissimos cupiditate, at dolor, sint quas, repellendus eligendi minus quos officia blanditiis. Quia, culpa.`, id: 8},
-    ],
+    chat: [],
 };
 
 const chatReducer = (state = initialState, action) => {
-    return state;
+    switch (action.type) {
+        case GET_MESSAGES:
+            return ({ ...state, chat: [...state.chat, ...action.chat] })
+
+        default:
+            return state;
+    }
 };
+
+export const getChat = (chat) => ({ type: GET_MESSAGES, chat });
 
 export default chatReducer;

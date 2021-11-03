@@ -3,7 +3,7 @@ import ava from '../../../../images/ava.png'
 
 const Messages = props => {
     return (
-        <div className={`hover-box ${classes.messages}`}>
+        <div className={classes.messages}>
             <div>
                 <img src={ava} alt="" className={classes.messages__image} />
             </div>

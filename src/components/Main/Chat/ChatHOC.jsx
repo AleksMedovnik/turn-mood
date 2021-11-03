@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import Chat from "./Chat";
+import { getChat } from '../../../store/reducers/chatReducer'
 
 
 const mapStateToProps = state => {
@@ -8,4 +9,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, { })(Chat);
+export default connect(mapStateToProps, { getChat })(Chat);
