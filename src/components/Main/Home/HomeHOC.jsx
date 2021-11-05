@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Home from "./Home";
-import { getUsers } from '../../../store/reducers/homeReducer'
+import { getUsers, follow } from '../../../store/reducers/homeReducer'
 
 const mapStateToProps = state => {
     return {
@@ -8,4 +8,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, { getUsers })(Home);
+export default connect(mapStateToProps, { getUsers, follow })(Home);

@@ -61,17 +61,32 @@ img {
     height: $btnHeight;
     border-radius: 3px;
     border: 1px solid gray;
-    background-image: linear-gradient(135deg, $btnRed 50%, $btnWhite 50%);
     background-position-x: left;
     background-size: $btnWidth * 2 $btnHeight;
     background-repeat: no-repeat;
-    color: $btnWhite;
     transition: .3s;
 }
 
 .btn:hover{
     background-position-x: -100px;
+}
+
+.btn-del {
+    background-image: linear-gradient(135deg, $btnRed 50%, $btnWhite 50%);
+    color: $btnWhite;
+}
+
+.btn-del:hover{
     color: $btnRed;
+}
+
+.btn-send {
+    background-image: linear-gradient(135deg, $logoLight 50%, $btnWhite 50%);
+    color: $logoDark;
+}
+
+.btn-send:hover{
+    color: rgb(8, 8, 102);
 }
 
 .App {

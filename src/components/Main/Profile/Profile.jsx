@@ -36,10 +36,15 @@ const Profile = props => {
 
     const deletePost = (id) => {
         axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
-        .then(() => props.deletePost(id));
+            .then(() => props.deletePost(id));
     }
 
-    const posts = props.posts.map(post => <Post deletePost={deletePost} post={post.body} key={post.id} id={post.id} />).reverse();
+    const posts = props.posts.map(post => {
+        return (
+            <Post deletePost={deletePost} post={post.body} key={post.id} id={post.id} />
+        )
+    })
+        .reverse();
 
     return (
         <div>
@@ -54,8 +59,10 @@ const Profile = props => {
                 </div>
             </div>
             <div className={classes.profile__newPost}>
-                <textarea value={props.newPostText} onChange={newPostChange} name="post" className={`post__input ${classes.postInput}`} cols='50' rows='1' />
-                <button onClick={addPost}>Submit</button>
+                <textarea value={props.newPostText}
+                    onChange={newPostChange}
+                    name="post" />
+                <button onClick={addPost} className='btn btn-send'>Add Post</button>
             </div>
             <div className={classes.profile__wall}>
                 {posts}
