@@ -2,14 +2,18 @@ import { Route } from "react-router";
 import ChatHOC from "./Chat/ChatHOC";
 import HomeHOC from "./Home/HomeHOC";
 import ProfileHOC from "./Profile/ProfileHOC";
+import { Routes } from "react-router-dom";
 
 
 const Main = () => {
     return (
         <div className='main'>
-            <Route exact path={["/", "/home"]} render={() => <HomeHOC />} />
-            <Route path="/profile" render={() => <ProfileHOC />} />
-            <Route path="/chat" render={() => <ChatHOC />} />
+            <Routes>
+                <Route exact path="/" element={<HomeHOC />} />
+                <Route exact path="/home" element={<HomeHOC />} />
+                <Route path="/profile" element={<ProfileHOC />} />
+                <Route path="/chat" element={<ChatHOC />} />
+            </Routes>
         </div>
     )
 }
