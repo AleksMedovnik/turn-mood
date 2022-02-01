@@ -1,18 +1,19 @@
+const UPDATE_USER_NAME = 'UPDATE-USER-NAME';
 const GET_POSTS = 'GET_POSTS';
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const DELETE_POST = 'DELETE-POST';
 
 let initialState = {
-    userName: 'Alex Honey',
-    id: 123,
-    status: 'Married',
+    userName: '',
     newPostText: '',
     posts: [],
 };
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
+        case UPDATE_USER_NAME:
+            return { ...state, userName: action.userName };
         case GET_POSTS:
             return ({ ...state, posts: [...state.posts, ...action.posts] })
 
@@ -33,6 +34,7 @@ const profileReducer = (state = initialState, action) => {
     }
 };
 
+export const updateUserName = (userName) => ({ type: UPDATE_USER_NAME, userName })
 export const getPosts = (posts) => ({ type: GET_POSTS, posts })
 export const addPost = (post) => ({ type: ADD_POST, post })
 export const updateNewPostText = (text) => ({ type: UPDATE_NEW_POST_TEXT, newPostText: text })

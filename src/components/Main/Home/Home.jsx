@@ -18,7 +18,7 @@ const Home = props => {
         return (
             <HomeUser key={user.id}
                 id={user.id}
-                name={user.username}
+                name={user.name}
                 company={user.company.name}
                 followed={user.followed}
                 follow={props.follow}/>

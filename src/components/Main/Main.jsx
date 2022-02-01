@@ -9,10 +9,10 @@ const Main = () => {
     return (
         <div className='main'>
             <Routes>
-                <Route exact path="/" element={<HomeHOC />} />
-                <Route exact path="/home" element={<HomeHOC />} />
-                <Route path="/profile" element={<ProfileHOC />} />
-                <Route path="/chat" element={<ChatHOC />} />
+                <Route path="/" element={<HomeHOC />} />
+                <Route path="home" element={<HomeHOC />} />
+                <Route path="profile/*" element={<ProfileHOC />} />
+                <Route path="chat" element={<ChatHOC />} />
             </Routes>
         </div>
     )

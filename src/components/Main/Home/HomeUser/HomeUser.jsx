@@ -26,10 +26,12 @@ const HomeUser = props => {
     return (
         <div className={classes.user}>
             <div>
-                <NavLink to='/'><img src={ava} alt="" className={classes.user__image} /></NavLink>
+                <NavLink to={`/profile/${props.id}`}>
+                    <img src={ava} alt="" className={classes.user__image} />
+                </NavLink>
             </div>
             <div>
-                <NavLink to='/' className={classes.user__name}>{props.name}</NavLink>
+                <NavLink to={`/profile/${props.id}`} className={classes.user__name}>{props.name}</NavLink>
                 <br />
                 <span className={classes.user__status}>{props.company}</span>
             </div>
