@@ -8,20 +8,20 @@ const Header = () => {
     return (
         <header className='header'>
             <div className='logo'>
-                <NavLink to='/'>
+                <NavLink to='#'>
                     <img className='header__img' src={logo} />
                 </NavLink>
-                <h1><NavLink to='/' className='logo__link'>Turn Mood</NavLink></h1>
+                <h1><NavLink to='#' className='logo__link'>Turn Mood</NavLink></h1>
             </div>
 
             <FormSearch />
 
-            <NavLink to='/' className='shop'>shop</NavLink>
+            <NavLink to='#' className='shop'>shop</NavLink>
 
-            <div className='header__profile bg-profile'>
+            <NavLink to='/profile' className='header__profile bg-profile'>
                 <span>Alex Honey</span>
                 <img className='header__img' src={ava} />
-            </div>
+            </NavLink>
         </header>
     );
 };

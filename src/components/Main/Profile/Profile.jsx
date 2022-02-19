@@ -6,8 +6,8 @@ const Profile = props => {
     return (
         <div>
             <Routes>
-                <Route path="/" element={<UserProfile args={props}/>} />
-                <Route path=":id" element={<UserProfile args={props}/>} />
+                <Route path="/" element={<UserProfile {...props}/>} />
+                <Route path=":id" element={<UserProfile {...props}/>} />
             </Routes>
         </div>
     )

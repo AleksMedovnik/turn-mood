@@ -5,6 +5,7 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const DELETE_POST = 'DELETE-POST';
 
 let initialState = {
+    myName: 'Alex Honey',
     userName: '',
     newPostText: '',
     posts: [],
