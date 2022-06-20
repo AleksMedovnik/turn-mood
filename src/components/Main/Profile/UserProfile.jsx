@@ -53,8 +53,9 @@ const UserProfile = props => {
     }
 
     const posts = props.posts.map(post => {
+        const body = post.body[0].toUpperCase() + post.body.slice(1)
         return (
-            <Post deletePost={deletePost} post={post.body} key={post.id} id={post.id} />
+            <Post deletePost={deletePost} post={body} key={post.id} id={post.id} />
         )
     })
         .reverse();
