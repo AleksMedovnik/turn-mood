@@ -11,6 +11,8 @@ $btnWidth: 100px;
 $btnHeight: 20px;
 $btnRed: #ff15ff;
 $btnWhite: rgb(226, 213, 213);
+$statusColor: rgb(250, 184, 184);
+
 
 @mixin d-flex() {
     display: flex;
@@ -246,5 +248,49 @@ img {
         a:hover {
             color: $activelinkColor;
         }
+    }
+}
+
+.user {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 2fr 8fr 2fr;
+    align-items: center;
+    gap: 15px;
+    
+
+    .user__image {
+        width: 90px;
+    }
+
+    .user__status {
+        font-size: 1rem;
+        color: $statusColor;
+    }
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+
+    .profile__image {
+        width: 200px;
+    }
+    .profile__name {
+        font-size: 1.4rem;
+    }
+    .profile__status {
+        font-size: 0.9rem;
+        color: $statusColor;
+    }
+}
+
+.post {
+    margin-bottom: 20px;
+
+    .post__message {
+        margin-bottom: 10px;
     }
 }
